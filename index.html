@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/705d8d055f.js"></script>
+    <link href="styles.css" rel="stylesheet">
+    <title>Modal tarea</title>
+</head>
+<body>
+<div class="modal-back" id="modal">
+    <div class="info-modal">
+        <a href="#" id="closeModal">✖</a>
+        <h2>Contact Us</h2>
+        <p>If you have any questions concerning our services, please fill out the contact form below.</p>
+        <form action="/submit">
+            <label for="name">Name *</label>
+            <input id="name" name="name" required type="text">
+
+            <label for="email">E-mail *</label>
+            <input id="email" name="email" required type="email">
+
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button class="red-button" style="border: none" type="submit">Submit</button>
+        </form>
+    </div>
+
+</div>
+<section class="information">
+    <div class="text">
+        <h1>Our Team</h1>
+        <h2>A Dedicated Team of Experts</h2>
+        <p style="font-weight: bold; font-size: 20px">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Accusamus cum deleniti eligendi iusto natus, odio quae veniam voluptatem. Delectus earum eum incidunt iusto,
+            labore numquam quisquam saepe! Autem doloribus eius maiores, nisi praesentium sapiente vitae? Cum in
+            temporibus ullam velit!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam assumenda autem consequuntur culpa cum
+            dignissimos doloremque doloribus ducimus earum eligendi enim, et ex fugiat impedit iusto labore libero
+            maxime modi mollitia numquam provident quia quidem quos repellat saepe sapiente sequi sint tempora tenetur
+            vitae? Ad aperiam deserunt harum necessitatibus possimus rem soluta velit? Adipisci aperiam asperiores
+            beatae doloremque harum labore nam nostrum officiis suscipit tenetur. Adipisci autem ducimus eaque nam
+            numquam quibusdam quis quisquam reiciendis sit tempora. Alias animi architecto commodi delectus dicta dolore
+            eum ex excepturi facere harum, magnam minima optio pariatur perferendis quae sed sequi ut voluptatem,
+            voluptates voluptatum. Aut consequatur cum deleniti eligendi fugit inventore iusto officia quod sed
+            voluptate! Beatae blanditiis doloremque esse maxime necessitatibus, sequi.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At exercitationem, vel. Alias autem dolore
+            reprehenderit voluptates. Adipisci animi aspernatur at cupiditate delectus earum eos excepturi fugiat,
+            impedit iusto laboriosam libero maiores molestias nesciunt porro rerum vel voluptate. Aliquid architecto
+            assumenda at commodi cum dicta, dignissimos doloremque ea eligendi, error fugit id labore quisquam, ratione
+            suscipit temporibus veniam! Animi, ea explicabo laudantium mollitia nobis nostrum omnis pariatur rem vel!
+            Pariatur, quo?</p>
+        <div class="botones">
+            <a class="red-button" href="#">LEARN MORE</a>
+            <a class="white-button" href="#">VIEW ALL TEAM</a>
+        </div>
+
+    </div>
+    <div class="images">
+
+        <article>
+            <figure>
+                <img alt="img" src="imagenes/foto1.jpg">
+            </figure>
+            <h1>Robert Wagner</h1>
+            <h2>Hairdresser</h2>
+            <div class="logos">
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-google"></i>
+            </div>
+            <a class="red-button" href="#">GET IN TOUCH</a>
+        </article>
+
+        <article>
+            <figure>
+                <img alt="img" src="imagenes/foto2.jpg">
+            </figure>
+            <h1>Robert Wagner</h1>
+            <h2>Hairdresser</h2>
+            <div class="logos">
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-google"></i>
+            </div>
+            <a class="red-button" href="#">GET IN TOUCH</a>
+        </article>
+    </div>
+</section>
+
+<script>
+
+    $(function(){
+
+        $('#modal').fadeIn(); // Mostrar el modal
+        // Cerrar el modal
+        $('#closeModal').click(function () {
+            $('#modal').fadeOut();
+
+        });
+
+        setTimeout(function () {
+            $('#modal').fadeOut(); // Cerrar el modal
+        }, 5000); // 5000 milisegundos = 5 segundos
+
+        // Cerrar el modal al hacer clic fuera del contenido
+        $(window).click(function (event) {
+            if ($(event.target).is('#modal')) {
+                $('#modal').fadeOut();
+
+            }
+        });
+        document.addEventListener("keydown", function (event) {
+            if (event.key === 'Escape') {
+                $('#modal').fadeOut();
+            }
+        })
+
+    });
+</script>
+</body>
+</html>
